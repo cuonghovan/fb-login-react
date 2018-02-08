@@ -28,12 +28,23 @@ browserSync({
         // pretty colored output
         stats: {
           colors: true,
-          chunks: false
+          chunks: false,
+          version: false,
+          chunks: false,
+          modules: false,
+          children: false
         }
       }),
 
       // Allow HMR work with browserSync
       webpackHotMiddleware(bundler)
     ]
-  }
+  },
+
+  // no need to watch '*.js' here, webpack will take care of it for us,
+  // including full page reloads if HMR won't work
+  files: [
+    'src/*.html',
+    'src/core/**/*.js'
+  ]
 });

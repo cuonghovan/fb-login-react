@@ -1,3 +1,4 @@
+import raf from './temPolyfills';
 import Enzyme, { shallow, render, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -11,5 +12,5 @@ global.mount = mount;
 
 // Fail tests on any warning
 console.error = message => {
-   throw new Error(message);
+  throw new Error(message);
 };

@@ -19,7 +19,7 @@ class ClickCount extends React.Component {
   render() {
     return (
       <div className='login'>
-        <h1>Count: </h1>
+            <h1>Count: </h1>
         <h3>{this.state.count}</h3>
         <button onClick={this.updateCount}>Increase by 1</button>
       </div>

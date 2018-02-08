@@ -1,6 +1,6 @@
 const path = require('path');
-
 const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin');
+const ProgressPlugin = require('progress-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -58,6 +58,7 @@ if (ENV_DEVELOPMENT || ENV_PRODUCTION) {
     publicPath: '/'
   };
   config.plugins = [
+    new ProgressPlugin(true),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
