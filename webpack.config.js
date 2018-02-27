@@ -36,7 +36,10 @@ config.resolve = {
   modules: [
     path.resolve('.'),
     'node_modules'
-  ]
+  ],
+  alias: {
+    Components: path.join(__dirname, 'src/views/components')
+  }
 };
 
 //
