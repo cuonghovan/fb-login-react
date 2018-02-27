@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`weather-info renders correctly 1`] = `
+<div>
+  <styled.h3>
+    Detailed weather for 
+    Hanoi
+  </styled.h3>
+  <div>
+    Temperature: 
+    22
+    °C
+  </div>
+  <div>
+    Min Temperature: 
+    22
+     °C
+  </div>
+  <div>
+    Max Temperature: 
+    22
+     °C
+  </div>
+  <div>
+    Pressure: 
+    1011
+     hpa
+  </div>
+  <div>
+    Humidity: 
+    78
+     %
+  </div>
+  <div>
+    Wind: 
+    4.6
+     m/s
+  </div>
+</div>
+`;
