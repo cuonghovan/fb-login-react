@@ -45,6 +45,6 @@ browserSync({
   // including full page reloads if HMR won't work
   files: [
     'src/*.html',
-    'src/core/**/*.js'
+    'src/state/**/*.js'
   ]
 });

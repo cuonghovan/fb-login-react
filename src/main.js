@@ -4,7 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import configureStore from './core/store';
+import configureStore from 'State/store';
 import App from './views/app';
 
 const store = configureStore();

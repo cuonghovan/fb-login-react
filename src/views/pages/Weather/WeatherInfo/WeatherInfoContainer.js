@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { weatherSelectors } from './../../../core/weather'
-import WeatherInfo from 'Components/weather-info';
+import { weatherSelectors } from 'State/weather';
+import WeatherInfo from './WeatherInfo';
 
 class WeatherInfoContainer extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class WeatherInfoContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  data: weatherSelectors.getWeatherInfo(state)
+  data: weatherSelectors.getWeatherInfoSelect(state)
 });
 
 export default connect(mapStateToProps, null)(WeatherInfoContainer);

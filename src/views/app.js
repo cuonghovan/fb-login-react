@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'; 
 
-import Header from './components/header';
-import Weather from './pages/weather';
-import ClickCount from './pages/click-count';
+import Header from './components/Header';
+import Weather from './pages/Weather';
+import ClickCount from './pages/ClickCount';
 
 const App = () => (
   <div>

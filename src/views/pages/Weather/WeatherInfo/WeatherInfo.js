@@ -11,7 +11,7 @@ const WeatherInfo = ({data}) => {
   if(Object.keys(data).length === 0 && data.constructor === Object) {
     return(null);
   } else {
-    return (    
+    return (
       <div>
         <Title>Detailed weather for {data.name}</Title>
         <div>Temperature: {data.main.temp - 273.15}°C</div>

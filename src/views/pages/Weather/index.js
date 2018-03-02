@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchBarContainer from './../../containers/search-bar';
-import WeatherInfoContainer from './../../containers/weather-info';
+import SearchBarContainer from './SearchBar';
+import WeatherInfoContainer from './WeatherInfo';
 
 const MainLayout = styled.div`
   background: pink;

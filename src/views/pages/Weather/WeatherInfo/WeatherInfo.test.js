@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import WeatherInfo from './index';
+import WeatherInfo from './WeatherInfo';
 
 describe('weather-info', () => {
 
@@ -53,5 +53,9 @@ describe('weather-info', () => {
 
   it('renders correctly', () => {
     expect(weatherInfo).toMatchSnapshot();
+  });
+
+  it('shows prop data', () => {
+    
   });
 });
