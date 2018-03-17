@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import 'jest-styled-components';
 import WeatherInfo from './WeatherInfo';
 
 describe('weather-info', () => {
@@ -49,13 +49,22 @@ describe('weather-info', () => {
     }
   }
 
-  const weatherInfo = shallow(<WeatherInfo {...props} />);
-
+  
   it('renders correctly', () => {
+    const weatherInfo = shallow(<WeatherInfo {...props} />);
+
     expect(weatherInfo).toMatchSnapshot();
   });
 
   it('shows prop data', () => {
-    
+    const weatherInfo = mount(<WeatherInfo {...props} />);
+    let metrics = weatherInfo.find('WeatherInfo__Metric');
+
+    expect(metrics.at(0).text()).toEqual('Temperature: 22°C');
+    expect(metrics.at(1).text()).toEqual('Min Temperature: 22°C');
+    expect(metrics.at(2).text()).toEqual('Max Temperature: 22°C');
+    expect(metrics.at(3).text()).toEqual('Pressure: 1011hpa');
+    expect(metrics.at(4).text()).toEqual('Humidity: 78%');
+    expect(metrics.at(5).text()).toEqual('Wind: 4.6m/s');
   });
 });

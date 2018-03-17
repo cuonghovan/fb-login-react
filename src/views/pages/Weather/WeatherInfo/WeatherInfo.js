@@ -4,8 +4,17 @@ import PropTypes from 'prop-types';
 
 const Title = styled.h3`
   color: green;
-  font-size: 20px;
+  font-size: 24px;
 `;
+
+const Metric = styled.div`
+  color: black;
+  font-size: 18px;
+`
+const MetricContainer = styled.div`
+  display: inline-block;
+  text-align: left;
+`
 
 const WeatherInfo = ({data}) => {
   if(Object.keys(data).length === 0 && data.constructor === Object) {
@@ -14,12 +23,14 @@ const WeatherInfo = ({data}) => {
     return (
       <div>
         <Title>Detailed weather for {data.name}</Title>
-        <div>Temperature: {data.main.temp - 273.15}°C</div>
-        <div>Min Temperature: {data.main.temp_min - 273.15} °C</div>
-        <div>Max Temperature: {data.main.temp_max - 273.15} °C</div>
-        <div>Pressure: {data.main.pressure} hpa</div>
-        <div>Humidity: {data.main.humidity} %</div>
-        <div>Wind: {data.wind.speed} m/s</div>
+        <MetricContainer>
+          <Metric>Temperature: {data.main.temp - 273.15}°C</Metric>
+          <Metric>Min Temperature: {data.main.temp_min - 273.15}°C</Metric>
+          <Metric>Max Temperature: {data.main.temp_max - 273.15}°C</Metric>
+          <Metric>Pressure: {data.main.pressure}hpa</Metric>
+          <Metric>Humidity: {data.main.humidity}%</Metric>
+          <Metric>Wind: {data.wind.speed}m/s</Metric>
+        </MetricContainer>
       </div>
     );
   }

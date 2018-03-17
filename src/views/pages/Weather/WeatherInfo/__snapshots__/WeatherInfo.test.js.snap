@@ -2,39 +2,41 @@
 
 exports[`weather-info renders correctly 1`] = `
 <div>
-  <styled.h3>
+  <WeatherInfo__Title>
     Detailed weather for 
     Hanoi
-  </styled.h3>
-  <div>
-    Temperature: 
-    22
-    °C
-  </div>
-  <div>
-    Min Temperature: 
-    22
-     °C
-  </div>
-  <div>
-    Max Temperature: 
-    22
-     °C
-  </div>
-  <div>
-    Pressure: 
-    1011
-     hpa
-  </div>
-  <div>
-    Humidity: 
-    78
-     %
-  </div>
-  <div>
-    Wind: 
-    4.6
-     m/s
-  </div>
+  </WeatherInfo__Title>
+  <WeatherInfo__MetricContainer>
+    <WeatherInfo__Metric>
+      Temperature: 
+      22
+      °C
+    </WeatherInfo__Metric>
+    <WeatherInfo__Metric>
+      Min Temperature: 
+      22
+      °C
+    </WeatherInfo__Metric>
+    <WeatherInfo__Metric>
+      Max Temperature: 
+      22
+      °C
+    </WeatherInfo__Metric>
+    <WeatherInfo__Metric>
+      Pressure: 
+      1011
+      hpa
+    </WeatherInfo__Metric>
+    <WeatherInfo__Metric>
+      Humidity: 
+      78
+      %
+    </WeatherInfo__Metric>
+    <WeatherInfo__Metric>
+      Wind: 
+      4.6
+      m/s
+    </WeatherInfo__Metric>
+  </WeatherInfo__MetricContainer>
 </div>
 `;

@@ -6,6 +6,7 @@ import WeatherInfoContainer from './WeatherInfo';
 const MainLayout = styled.div`
   background: pink;
   text-align: center;
+  padding: 20px 0;
 `;
 
 const Weather = () => (
