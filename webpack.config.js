@@ -13,7 +13,7 @@ const config = module.exports = {};
 const loaderRules = {
   js: {
     test: /\.js/,
-    loader: 'babel-loader',
+    loader: ['babel-loader', 'eslint-loader'],
     exclude: '/node_modules'
   },
   jsx: {
@@ -39,7 +39,7 @@ config.resolve = {
   ],
   alias: {
     Components: path.join(__dirname, 'src/views/components'),
-    Utils: path.join(__dirname, 'src/utils'), 
+    Utils: path.join(__dirname, 'src/utils'),
     State: path.join(__dirname, 'src/state')
   }
 };
@@ -52,7 +52,7 @@ if (ENV_DEVELOPMENT || ENV_PRODUCTION) {
     main: ["babel-polyfill", './src/main.js']
   };
   config.module = {
-    loaders : [
+    loaders: [
       loaderRules.js,
       loaderRules.jsx
     ]
