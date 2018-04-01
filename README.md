@@ -12,7 +12,6 @@ This project uses some additional helpful libraries:
 ### Requirement
 
 * Install Node.js and npm https://nodejs.org
-* Install yarn https://yarnpkg.com (optional)
 
 ### Setup for Development build
 
@@ -20,13 +19,12 @@ Step1:
 
 ```
 npm install
-or yarn install
 ```
 
 Step 2:
 
 ```
-npm run dev
+npm start
 ```
 
 ### Setup for Production build
@@ -35,7 +33,6 @@ Step 1:
 
 ```
 npm install
-or yarn install
 ```
 
 Step 2:
