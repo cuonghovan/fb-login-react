@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -13,14 +13,19 @@ class SearchBar extends React.Component {
   };
 
   onSearchBtnClick() {
-    let query = this.searchInput.value.trim();
+    const query = this.searchInput.value.trim();
     this.props.handleSearch(query);
   }
 
   render() {
-    return(
-      <div className='search-bar'>
-        <input type='text' tabIndex='0'placeholder='Enter location' ref={c => this.searchInput = c} />
+    return (
+      <div className="search-bar">
+        <input
+          type="text"
+          tabIndex="0"
+          placeholder="Enter location"
+          ref={c => (this.searchInput = c)}
+        />
         <button onClick={this.onSearchBtnClick}>Search</button>
       </div>
     );

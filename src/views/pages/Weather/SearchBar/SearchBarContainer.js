@@ -1,9 +1,9 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-import { fetchWeatherInfoAct } from 'State/weather';
-import SearchBar from './SearchBar';
+import { fetchWeatherInfoAct } from "State/weather";
+import SearchBar from "./SearchBar";
 
 class SearchBarContainer extends React.Component {
   constructor(props) {
@@ -17,13 +17,11 @@ class SearchBarContainer extends React.Component {
   };
 
   handleSearch(query) {
-    this.props.fetchWeatherInfoAct(query)
+    this.props.fetchWeatherInfoAct(query);
   }
 
   render() {
-    return (
-      <SearchBar handleSearch={this.handleSearch} />
-    );
+    return <SearchBar handleSearch={this.handleSearch} />;
   }
 }
 

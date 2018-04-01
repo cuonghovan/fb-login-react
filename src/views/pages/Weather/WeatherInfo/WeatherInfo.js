@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Title = styled.h3`
   color: green;
@@ -10,15 +10,16 @@ const Title = styled.h3`
 const Metric = styled.div`
   color: black;
   font-size: 18px;
-`
+`;
+
 const MetricContainer = styled.div`
   display: inline-block;
   text-align: left;
-`
+`;
 
-const WeatherInfo = ({data}) => {
-  if(Object.keys(data).length === 0 && data.constructor === Object) {
-    return(null);
+const WeatherInfo = ({ data }) => {
+  if (Object.keys(data).length === 0 && data.constructor === Object) {
+    return null;
   } else {
     return (
       <div>

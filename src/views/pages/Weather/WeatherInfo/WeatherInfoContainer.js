@@ -1,9 +1,9 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-import { weatherSelectors } from 'State/weather';
-import WeatherInfo from './WeatherInfo';
+import { weatherSelectors } from "State/weather";
+import WeatherInfo from "./WeatherInfo";
 
 class WeatherInfoContainer extends React.Component {
   constructor(props) {
@@ -15,9 +15,7 @@ class WeatherInfoContainer extends React.Component {
   };
 
   render() {
-    return (
-      <WeatherInfo data={this.props.data} />
-    );
+    return <WeatherInfo data={this.props.data} />;
   }
 }
 
