@@ -15,7 +15,6 @@
     "test:watch": "jest --watchAll --verbose",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
-    "start": "npm-run-all --parallel test lint:watch dev",
     "precommit": "pretty-quick --staged"
   },
   "repository": {
