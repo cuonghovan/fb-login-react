@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { fetchWeatherInfoAct } from "State/weather";
+import { weatherActions } from "State/weather";
 import SearchBar from "./SearchBar";
 
 class SearchBarContainer extends React.Component {
@@ -26,7 +26,7 @@ class SearchBarContainer extends React.Component {
 }
 
 const mapDispatchToProps = {
-  fetchWeatherInfoAct
+  fetchWeatherInfoAct: weatherActions.fetchWeatherInfoAct
 };
 
 export default connect(null, mapDispatchToProps)(SearchBarContainer);

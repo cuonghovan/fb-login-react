@@ -29,6 +29,12 @@ export const fetchWeatherInfoSuccessAct = weatherData => ({
   }
 });
 
+export const weatherActions = {
+  clearWeatherInfoAct,
+  fetchWeatherInfoAct,
+  fetchWeatherInfoSuccessAct
+};
+
 // Services
 export const fetchWeatherInfoCall = location => {
   return axios
