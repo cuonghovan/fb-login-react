@@ -67,16 +67,16 @@ const weatherReducer = (state = initialWeatherInfo, action) => {
     case CLEAR_WEATHER_INFO:
       return initialWeatherInfo;
     case FETCH_WEATHER_INFO_SUCCESS:
-      return state.merge(action.payload.weatherData);
+      return state.merge(fromJS(action.payload.weatherData));
     default:
-      return initialWeatherInfo;
+      return state;
   }
 };
 export default weatherReducer;
 
 // Selectors
-export const getWeatherInfoSelect = state => {
-  return state.weatherInfo.toJS();
+export const getWeatherInfoSelect = store => {
+  return store.get("weatherInfo");
 };
 
 export const weatherSelectors = {
