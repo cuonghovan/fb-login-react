@@ -1,5 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Input = styled.input`
+  padding: 0 10px;
+  line-height: 20px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+`;
+
+const SearchButton = styled.button`
+  height: 22px;
+  border: 1px solid gray;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+`;
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -19,15 +53,15 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="search-bar">
-        <input
+      <Wrapper>
+        <Input
           type="text"
           tabIndex="0"
           placeholder="Enter location"
-          ref={c => (this.searchInput = c)}
+          innerRef={c => (this.searchInput = c)}
         />
-        <button onClick={this.onSearchBtnClick}>Search</button>
-      </div>
+        <SearchButton onClick={this.onSearchBtnClick}>Search</SearchButton>
+      </Wrapper>
     );
   }
 }
