@@ -52,11 +52,6 @@ if (ENV_DEVELOPMENT || ENV_PRODUCTION) {
   config.module = {
     loaders: [loaderRules.js, loaderRules.jsx]
   };
-  config.output = {
-    filename: "[name].js",
-    path: path.resolve("./build"),
-    publicPath: "/"
-  };
   config.plugins = [
     new ProgressPlugin(true),
     new HtmlWebpackPlugin({
@@ -85,7 +80,11 @@ if (ENV_DEVELOPMENT) {
 // ─── PRODUCTION ─────────────────────────────────────────────────────────────────
 //
 if (ENV_PRODUCTION) {
-  config.devtool = "hidden-source-map";
+  config.output = {
+    filename: "[name].js",
+    path: path.resolve("./build"),
+    publicPath: "/"
+  };
   config.output.filename = "[name].[chunkhash].js";
   config.module.loaders.push(loaderRules.cssExternal);
   config.plugins.push(
