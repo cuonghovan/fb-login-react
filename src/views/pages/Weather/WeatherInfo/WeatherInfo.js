@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Title = styled.h3`
-  color: green;
+  color: purple;
   font-size: 24px;
 `;
 
