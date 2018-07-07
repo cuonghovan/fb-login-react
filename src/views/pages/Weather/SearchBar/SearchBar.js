@@ -57,7 +57,7 @@ class SearchBar extends React.Component {
         <Input
           type="text"
           tabIndex="0"
-          placeholder="Enter location"
+          placeholder="Enter places"
           innerRef={c => (this.searchInput = c)}
         />
         <SearchButton onClick={this.onSearchBtnClick}>Search</SearchButton>

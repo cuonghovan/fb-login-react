@@ -30,9 +30,9 @@ node {
         /* Push the image */
         withDockerRegistry([credentialsId: "docker-hub-credentials", url: ""]) {
           sh "docker tag react-demo-app-i cuonghovan/react-demo-app-i:${env.BUILD_NUMBER}"
-          sh "docker tag react-demo-app-i cuonghovan/react-demo-app-i:lastest"
+          sh "docker tag react-demo-app-i cuonghovan/react-demo-app-i:latest"
           sh "docker push cuonghovan/react-demo-app-i:${env.BUILD_NUMBER}"
-          sh "docker push cuonghovan/react-demo-app-i:lastest"
+          sh "docker push cuonghovan/react-demo-app-i:latest"
         }
       }
     }
