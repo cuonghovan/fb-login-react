@@ -18,7 +18,9 @@ node {
     }
     stage('deploy') {
       sh 'docker pull localhost:5000/react-demo-app-i'
-      sh 'docker run -p 3000:80 --name react-demo-app localhost:5000/react-demo-app-i'
+      sh 'docker stop react-demo-app'
+      sh 'docker rm react-demo-app'
+      sh 'docker run -d -p 3000:80 --name react-demo-app localhost:5000/react-demo-app-i'
     }
   }
   catch (err) {
