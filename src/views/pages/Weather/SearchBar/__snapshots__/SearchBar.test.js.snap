@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search-bar renders correctly 1`] = `
+<SearchBar__Wrapper>
+  <SearchBar__Input
+    innerRef={[Function]}
+    placeholder="Enter location"
+    tabIndex="0"
+    type="text"
+  />
+  <SearchBar__SearchButton
+    onClick={[Function]}
+  >
+    Search
+  </SearchBar__SearchButton>
+</SearchBar__Wrapper>
+`;

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`weather-info renders correctly 1`] = `
+<div>
+  <WeatherInfo__Title>
+    Detailed weather for 
+    Hanoi
+  </WeatherInfo__Title>
+  <WeatherInfo__MetricContainer>
+    <WeatherInfo__Metric>
+      Temperature: 
+      22
+      °C
+    </WeatherInfo__Metric>
+    <WeatherInfo__Metric>
+      Min Temperature: 
+      22
+      °C
+    </WeatherInfo__Metric>
+    <WeatherInfo__Metric>
+      Max Temperature: 
+      22
+      °C
+    </WeatherInfo__Metric>
+    <WeatherInfo__Metric>
+      Pressure: 
+      1011
+      hpa
+    </WeatherInfo__Metric>
+    <WeatherInfo__Metric>
+      Humidity: 
+      78
+      %
+    </WeatherInfo__Metric>
+    <WeatherInfo__Metric>
+      Wind: 
+      4.6
+      m/s
+    </WeatherInfo__Metric>
+  </WeatherInfo__MetricContainer>
+</div>
+`;
