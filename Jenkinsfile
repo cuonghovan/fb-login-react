@@ -1,5 +1,4 @@
 node {
-  def app
   try {
     stage('Checkout') {
       checkout scm
@@ -13,18 +12,22 @@ node {
       if(env.BRANCH_NAME == 'test3'){
         
         /* Build the image*/
-        app = docker.build('react-demo-app-i')
-        
+        sh 'docker build -t react-demo-app-i .'
+      }
+    }
+    stage('Publish') {
+      when {
+        branch 'test3'
+      }
+      steps {
         /* Push the image with two tags:
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.*/
-        docker.withRegistry('cuonghovan', 'docker-hub-credentials') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+        
+        withDockerRegistry([ credentialsId: 'docker-hub-credentials', url: '' ]) {
+          sh 'docker push cuonghovan/react-demo-app-i:latest'
+          sh 'docker push cuonghovan/react-demo-app-i:${env.BUILD_NUMBER}'
         }
-        /*sh 'docker tag react-demo-app-i cuonghovan/react-demo-app'
-        sh 'docker push cuonghovan/react-demo-app'
-        sh 'docker rmi -f react-demo-app-i localhost:5000/react-demo-app-i'*/
       }
     }
     stage('Deploy') {
