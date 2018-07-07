@@ -7,6 +7,7 @@ node {
       sh 'git --version'
       echo "Branch: ${env.BRANCH_NAME}"
       sh 'groups'
+      sh 'useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo'
       sh 'sudo docker -v'
       sh 'printenv'
     }
