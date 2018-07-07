@@ -3,40 +3,52 @@
 React redux application demos.
 This project uses some additional helpful libraries:
 
+* Styled components
 * Immutable.js
 * Redux-saga
 * Axios
+* Jest
 
 ## Install
 
 ### Requirement
 
-* Install Node.js and npm https://nodejs.org
+* Install Docker https://docs.docker.com/install/
 
-### Setup for Development build
+### Setup for Development
 
-Step1:
-
-```
-npm install
-```
-
-Step 2:
+Step1: Buid dev image
 
 ```
-npm start
+docker build -t react-demo-dev-i -f dev.dockerfile .
 ```
 
-### Setup for Production build
-
-Step 1:
+Step 2: Run the image
 
 ```
-npm install
+docker run --name react-demo-dev-app -p 3000:3000 -v <path/to/project>:/usr/src/app react-demo-dev-i
 ```
 
-Step 2:
+Step3: Start development
 
 ```
-npm run build
+yarn dev
 ```
+
+Open browser at localhost:3000 to view the app.
+
+### Setup for Production
+
+Step1: Buid production image
+
+```
+docker build -t react-demo-prod-i .
+```
+
+Step 2: Run the image
+
+```
+docker run --name react-demo-prod-app -p 4000:80 react-demo-prod-i
+```
+
+Open browser at localhost:4000 to view the app.
