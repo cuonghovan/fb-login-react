@@ -7,7 +7,7 @@ node {
     stage('Environment') {
       sh 'git --version'
       echo "Branch: ${env.BRANCH_NAME}"
-      sh 'sudo docker -v'
+      sh 'docker -v'
     }
     stage('Build') {
       if(env.BRANCH_NAME == 'test3'){
@@ -28,9 +28,9 @@ node {
       }
     }
     stage('Deploy') {
-      docker stop react-demo-app
-      docker rm react-demo-app
-      docker run -d -p 3000:80 --name react-demo-app cuonghovan/react-demo-app-i
+      sh 'docker stop react-demo-app'
+      sh 'docker rm react-demo-app'
+      sh 'docker run -d -p 3000:80 --name react-demo-app cuonghovan/react-demo-app-i'
     }
   }
   catch (err) {
