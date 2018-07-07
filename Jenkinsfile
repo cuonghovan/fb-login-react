@@ -6,13 +6,10 @@ node {
     stage('Environment') {
       sh 'git --version'
       echo "Branch: ${env.BRANCH_NAME}"
-      sh 'groups'
-      sh 'adduser root sudo'
       sh 'sudo docker -v'
-      sh 'printenv'
     }
     stage('Deploy'){
-      if(env.BRANCH_NAME == 'master'){
+      if(env.BRANCH_NAME == 'test3'){
         sh 'docker build -t react-demo-app-i --no-cache .'
         sh 'docker tag react-demo-app-i localhost:5000/react-demo-app-i'
         sh 'docker push localhost:5000/react-demo-app-i'
