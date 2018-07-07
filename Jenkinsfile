@@ -16,19 +16,13 @@ node {
       }
     }
     stage('Publish') {
-      when {
-        branch 'test3'
-      }
-      steps {
-        /* Push the image with two tags:
-         * First, the incremental build number from Jenkins
-         * Second, the 'latest' tag.*/
-        
+      if(env.BRANCH_NAME == 'test3') {
         withDockerRegistry([ credentialsId: 'docker-hub-credentials', url: '' ]) {
+          sh 'docker tag react-demo-app-i cuonghovan/react-demo-app-i'
           sh 'docker push cuonghovan/react-demo-app-i:latest'
           sh 'docker push cuonghovan/react-demo-app-i:${env.BUILD_NUMBER}'
         }
-      }
+      }      
     }
     stage('Deploy') {
       sh 'docker stop react-demo-app'
