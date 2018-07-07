@@ -5,7 +5,7 @@ node {
     }
     stage('Environment') {
       sh 'git --version'
-      echo "Branch: ${env.BRANCH_NAME}"
+      echo "Branch: ${env.BRANCH_NAME}  ${env.BUILD_NUMBER}"
       sh 'docker -v'
     }
     stage('Build') {
@@ -20,7 +20,6 @@ node {
         withDockerRegistry([ credentialsId: 'docker-hub-credentials', url: '' ]) {
           sh 'docker tag react-demo-app-i cuonghovan/react-demo-app-i'
           sh 'docker push cuonghovan/react-demo-app-i:latest'
-          sh 'docker push cuonghovan/react-demo-app-i:${env.BUILD_NUMBER}'
         }
       }      
     }
