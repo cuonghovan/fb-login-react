@@ -7,9 +7,12 @@ node {
       echo "Branch: ${env.BRANCH_NAME}"
       sh "git --version"      
       sh "docker -v"
+      sh "node -v"
+      sh "npm -v"
     }
     stage("Test") {
-      echo "Test passed."
+      sh "npm run lint"
+      sh "npm run test"
     }
     if(env.BRANCH_NAME == "develop" || env.BRANCH_NAME == "release"){
       stage("Build") {
