@@ -17,7 +17,7 @@ node {
     if(env.BRANCH_NAME == "test3"){
       stage("Deploy") {
         /* Run the image */
-        sh "if [docker ps -a | grep react-demo-app] then docker stop react-demo-app docker rm react-demo-app"
+        sh "if [docker ps -a | grep react-demo-app] then docker stop react-demo-app then docker rm react-demo-app"
         sh "docker run -d -p 3000:80 --name react-demo-app react-demo-app-i"
       }
     }
