@@ -8,13 +8,13 @@ node {
       sh "git --version"      
       sh "docker -v"
     }
-    if(env.BRANCH_NAME == "develop" || env.BRANCH_NAME == "release"){
+    if(env.BRANCH_NAME == "test3" || env.BRANCH_NAME == "release"){
       stage("Build") {
         /* Build the image */
         sh "docker build -t react-demo-app-i ."
       }
     }
-    if(env.BRANCH_NAME == "develop"){
+    if(env.BRANCH_NAME == "test3"){
       stage("Deploy") {
         /* Run the image */
         if (docker ps -a | grep react-demo-app) {
