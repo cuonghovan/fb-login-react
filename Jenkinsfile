@@ -7,6 +7,8 @@ node {
       echo "Branch: ${env.BRANCH_NAME}"
       sh "git --version"      
       sh "docker -v"
+      sh "node -v"
+      sh "npm -v"
     }
     stage("Test") {
       sh "npm run lint"
