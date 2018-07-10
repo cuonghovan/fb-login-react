@@ -8,25 +8,21 @@ node {
       sh "git --version"      
       sh "docker -v"
     }
-    stage("Test") {
-      echo "Test passed."
-    }
-    stage("Build") {
-      if(env.BRANCH_NAME == "develop" || env.BRANCH_NAME == "release"){
+    if(env.BRANCH_NAME == "develop" || env.BRANCH_NAME == "release"){
+      stage("Build") {
         /* Build the image */
         sh "docker build -t react-demo-app-i ."
       }
     }
-    stage("Deploy") {
-      if(env.BRANCH_NAME == "develop"){
+    if(env.BRANCH_NAME == "develop"){
+      stage("Deploy") {
         /* Run the image */
-        sh "docker stop react-demo-app"
-        sh "docker rm react-demo-app"
+        sh "if [ \"\$(docker ps -q -f name=react-demo-app)\" ]; then docker stop react-demo-app; docker rm react-demo-app; fi"
         sh "docker run -d -p 3000:80 --name react-demo-app react-demo-app-i"
       }
     }
-    stage("Publish") {
-      if(env.BRANCH_NAME == "release"){
+    if(env.BRANCH_NAME == "release"){
+      stage("Publish") {
         /* Push the image */
         withDockerRegistry([credentialsId: "docker-hub-credentials", url: ""]) {
           sh "docker tag react-demo-app-i cuonghovan/react-demo-app-i:${env.BUILD_NUMBER}"
