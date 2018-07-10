@@ -8,6 +8,10 @@ node {
       sh "git --version"      
       sh "docker -v"
     }
+    stage("Test") {
+      sh "npm run lint"
+      sh "npm run test"
+    }
     if(env.BRANCH_NAME == "develop" || env.BRANCH_NAME == "release"){
       stage("Build") {
         /* Build the image */
