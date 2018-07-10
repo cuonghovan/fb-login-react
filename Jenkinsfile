@@ -8,9 +8,6 @@ node {
       sh "git --version"      
       sh "docker -v"
     }
-    stage("Test") {
-      echo "Test passed."
-    }
     if(env.BRANCH_NAME == "test3" || env.BRANCH_NAME == "develop"){
       stage("Build") {
         /* Build the image*/
